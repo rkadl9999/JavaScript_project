@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>로또 번호 생성기</title>
+    <script>
+        function lotto(){
+            let arr = [];
+            for(let i = 0; i < 6; i++){
+                arr.push(Math.floor(Math.random()*45)+1); 
+                for(let c = 0; c<i; c++){
+                    if (arr[i] === arr[c]) {
+                        arr.pop();
+                        i--;  
+                    }
+                }
+            }
+            for(var i=0; i<6;i++)
+            {
+                if(i==0)
+                {
+                    document.write("<div style='color: #f8585b; text-align: center; font-size: 100px;'>")
+                    }
+                document.write(arr[i]+"\n");
+                if(i==5){
+                    document.write("</div>")
+                }
+            }
+            let scr = '"index.html"';
+            document.write("<hr><br><br><br><br><br><center><a href=")
+            document.write(scr)
+            document.write(">눌러</a></center>")
+        }
+    </script>
+</head>
+<style>
+    h3{
+        text-align: center;
+        color: aqua;
+        font-size: 50px;
+    }
+    a{
+
+        width:100px;
+    
+        background-color: #f8585b;
+    
+        border: none;
+    
+        color:#fff;
+    
+        padding: 15px 0;
+    
+        text-align: center;
+    
+        text-decoration: none;
+    
+        display: inline-block;
+    
+        font-size: 15px;
+    
+        margin: 4px;
+    
+        cursor: pointer;
+    }
+    div{
+        color: #f8585b;
+        text-align: center;
+        font-size: x-large;
+    }
+</style>
+<body>
+    <h3>로또 번호 생성기</h3>
+    <hr>
+    <br><br><br><br><br>
+    <center><a href="javascript:lotto()">눌러</a></center>
+</body>
+</html>
